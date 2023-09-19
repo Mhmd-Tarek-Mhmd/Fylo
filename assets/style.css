@@ -7,6 +7,11 @@
   --light-grayish-blue: hsl(240, 75%, 98%);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
@@ -28,4 +33,219 @@ a {
 }
 ul {
   list-style: none;
+}
+img {
+  max-width: 100%;
+}
+
+/* Utilities */
+
+.container,
+.container-lg {
+  width: 100%;
+  padding-inline: 24px;
+}
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 992px) {
+  .container,
+  .container-lg {
+    max-width: 992px;
+  }
+}
+@media (min-width: 1024px) {
+  .container,
+  .container-lg {
+    max-width: 1024px;
+  }
+}
+@media (min-width: 1280px) {
+  .container,
+  .container-lg {
+    max-width: 1280px;
+  }
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .text-mobile-center {
+    text-align: center;
+  }
+}
+
+/* Components */
+
+.form {
+  display: flex;
+  row-gap: 32px;
+  max-width: 600px;
+  position: relative;
+  margin-inline: auto;
+  flex-direction: column;
+}
+.form :is(input, button) {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+}
+.form input {
+  font-size: 24px;
+  padding-block: 30px;
+  padding-inline: 40px;
+  will-change: border-color;
+  border: 1px solid var(--black);
+}
+.form input:invalid {
+  border-color: red;
+}
+.form input::placeholder {
+  opacity: 0.7;
+}
+.form [role="alert"] {
+  left: 0;
+  top: 88px;
+  color: red;
+  display: none;
+  font-size: 14px;
+  position: absolute;
+}
+.form input:invalid + [role="alert"] {
+  display: block;
+}
+.form button {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.7rem;
+  will-change: opacity;
+  transition-duration: 0.3s;
+  transition-property: opacity;
+  background-color: var(--blue);
+  color: var(--light-grayish-blue);
+  font-family: "Raleway", sans-serif;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.form button:is(:hover, :focus-visible) {
+  opacity: 0.8;
+}
+@media (min-width: 992px) {
+  .form {
+    max-width: 100%;
+  }
+  .form :is(input, button) {
+    height: 46px;
+    border-radius: 4px;
+  }
+  .form input {
+    flex: 2;
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .form [role="alert"] {
+    font-size: 12px;
+    top: calc(100% + 8px);
+  }
+  .form button {
+    flex: 1;
+    font-size: 14px;
+    max-width: 200px;
+  }
+}
+
+/* Header area */
+
+.header {
+  padding-block: 45px 180px;
+}
+.nav {
+  padding-inline: 24px;
+  margin-bottom: 200px;
+}
+@media (max-width: 991px) {
+  .nav .logo {
+    transform: scale(0.964);
+  }
+}
+.nav .links {
+  column-gap: 45px;
+}
+.nav .links a {
+  font-size: 24px;
+}
+.nav .links a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+@media (min-width: 992px) {
+  .header {
+    padding-block: 65px 170px;
+  }
+  .nav {
+    margin-bottom: 80px;
+  }
+  .nav .logo {
+  }
+  .nav .links {
+    column-gap: 55px;
+  }
+  .nav .links a {
+    font-size: 16px;
+  }
+}
+
+.hero {
+}
+.hero .illustration {
+  margin-bottom: 40px;
+}
+.hero .title {
+  line-height: 1.5;
+  font-size: 2.9rem;
+  margin-bottom: 50px;
+}
+.hero .txt {
+  line-height: 1.5;
+  font-size: 1.79rem;
+  margin-bottom: 60px;
+}
+@media (min-width: 992px) {
+  .hero {
+  }
+  .hero .container {
+    display: grid;
+    column-gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: minmax(0, 590px) minmax(0, 645px);
+  }
+  .hero .illustration {
+    order: 2;
+  }
+  .hero .title {
+    margin-bottom: 15px;
+    font-size: 2.514rem;
+  }
+  .hero .txt {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .hero .form {
+    column-gap: 12px;
+    flex-direction: row;
+  }
+  .hero .form input {
+    max-width: 320px;
+  }
 }
