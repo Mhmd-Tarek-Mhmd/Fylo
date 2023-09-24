@@ -442,3 +442,115 @@ img {
     min-height: 48px;
   }
 }
+
+/* Footer area */
+
+.footer {
+  color: white;
+  padding-block: 130px 90px;
+  background-color: var(--black);
+}
+.footer .logo {
+  margin-bottom: 85px;
+}
+@media (min-width: 992px) {
+  .footer {
+    padding-block: 40px 85px;
+  }
+  .footer .logo {
+    margin-bottom: 35px;
+    transform: scale(0.8) translateX(-20px);
+  }
+}
+
+.footer .contacts {
+}
+.footer .contacts a {
+  display: flex;
+  font-size: 2rem;
+  column-gap: 42px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .footer .contacts svg {
+    transform: scale(1.8);
+  }
+}
+@media (min-width: 992px) {
+  .footer .contacts {
+  }
+  .footer .contacts a {
+    font-size: 16px;
+    column-gap: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+.footer .links {
+  display: grid;
+  row-gap: 30px;
+  margin-block: 120px 100px;
+}
+.footer .links a {
+  font-size: 2rem;
+  will-change: color;
+  transition-duration: 0.3s;
+  transition-property: color;
+}
+.footer .links a:is(:hover, :focus-visible) {
+  color: var(--blue);
+}
+@media (max-width: 991px) {
+  .footer .links li:nth-last-child(3) {
+    display: block;
+    margin-top: 60px;
+  }
+}
+@media (min-width: 992px) {
+  .footer .links {
+    row-gap: 14px;
+    margin-block: 0;
+    column-gap: 110px;
+    padding-top: 137px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer .links a {
+    font-size: 16px;
+  }
+  .footer .links .order {
+    grid-column: 2;
+    grid-row: var(--order);
+  }
+}
+
+.footer .social {
+  column-gap: 10px;
+  justify-content: center;
+}
+.footer .social a {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  border: 1px solid;
+  border-radius: 50%;
+  will-change: color;
+  place-items: center;
+  transition-duration: 0.3s;
+  transition-property: color;
+}
+.footer .social a:is(:hover, :focus-visible) {
+  color: var(--blue);
+}
+@media (min-width: 992px) {
+  .footer .social {
+    padding-top: 44px;
+  }
+  .footer .social a {
+    width: 30px;
+    height: 30px;
+  }
+  .footer .social svg {
+    transform: scale(0.7);
+  }
+}
