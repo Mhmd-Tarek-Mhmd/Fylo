@@ -44,8 +44,7 @@ img {
 
 /* Utilities */
 
-.container,
-.container-lg {
+.container {
   width: 100%;
   padding-inline: 24px;
 }
@@ -61,20 +60,17 @@ img {
   }
 }
 @media (min-width: 992px) {
-  .container,
-  .container-lg {
+  .container {
     max-width: 992px;
   }
 }
 @media (min-width: 1024px) {
-  .container,
-  .container-lg {
+  .container {
     max-width: 1024px;
   }
 }
 @media (min-width: 1280px) {
-  .container,
-  .container-lg {
+  .container {
     max-width: 1280px;
   }
 }
@@ -185,7 +181,6 @@ img {
   padding-block: 45px 180px;
 }
 .nav {
-  padding-inline: 24px;
   margin-bottom: 200px;
 }
 @media (max-width: 991px) {
@@ -207,7 +202,6 @@ img {
     padding-block: 65px 170px;
   }
   .nav {
-    padding-inline: 0;
     margin-bottom: 80px;
   }
   .nav .logo {
